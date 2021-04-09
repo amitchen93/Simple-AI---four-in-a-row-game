@@ -1,0 +1,141 @@
+amitchen93
+308162502
+amit chen
+
+037209152
+Eliyau
+eliyau
+=============================================
+I discussed the exercise with:
+LAB SUPPORT
+stackoverflow
+geeksforgeeks
+youtube explanation about classes and Gui
+guy casher
+=============================================
+====================
+= README for ex12:  =
+====================
+
+=======================================================================
+Some functions that uses classes to create a game of "4 in a row".
+The program includes the next files:
+ex12
+ai
+four_in_a_row
+
+The program includes the next classes:
+
+CLASS Game:
+The class includes the next functions:
+
+init
+
+create_board - create a board of game
+
+make_move -  method which gets the column where you want to place
+ a disk. if column is full, out of bounds, or the game
+ is finished - we get an Exception
+
+get_current_player - method which returns the current player
+ should play (if turn id odd or even)
+
+get_player_at - method which returns a disk of which player
+ (1 or 2 or None if if empty) for AI
+
+is_full - method which returns True if the cell in coloum is
+ full or False if the cell is empty
+
+check_free_row - method which checks where we can put a disk
+ in coloum. returns i which present the cell in coloum
+
+insert_color - method which change a specific cell's value
+ in the board (list of lists)
+
+get_winner - method which returns the status (1 for win of
+ 1, 2 for win of 2, 0 for full board and a tie)
+
+
+
+CLASS AI:
+The class includes the next functions:
+init
+find_legal_move - choose a random cell in the board and
+ put there a disk in the right color
+
+
+
+four_in_a_row file:
+CLASS Gui:
+
+init
+
+draw_board - draw a game board with colors and shapes with tkinter
+
+callback - paint a cell eith the current color of the player
+
+draw_moves - paint and put disks in the board
+
+make_move_gui - connect between the act of player to the game board
+
+check_win - check who is the winner, compare the winner index
+ list to the index_list (which ceates in class Game), mark 4
+  discs that wins the game and give a winning message
+   to the relevant player
+
+The file includes the next functions:
+
+callback 1 - manage the game of person vs person
+
+callback 2 - manage the game of person vs computer (2 options)
+
+button_1 - take a part in the option of person vs
+ person. uses callback 1
+
+button_2 - take a part in the option of person vs
+ computer. uses callback 2
+
+button_3 - do the same like button_2,
+ but first of all - call to the computer
+
+button_4 - call to the ai_v_ai (computer vs computer)
+
+Gui_final:
+
+init
+
+rematch - destroy the board and send us to the menu
+
+quit_game - destroy the board
+
+
+
+Each of the functions has a full explanation in the ex12 file
+=======================================================================
+
+=======================================================================
+note:
+We had doubts before and during the code writing, whether we should work
+with a single function for each scenario of play (person vs person,
+person vs computer, computer vs person and computer vs computer),
+or build a set of functions for each scenario.
+We decided to choose the second option because there are quite
+a few differences between the scenarios, and although this
+is possible, we preferred to split cases as much as possible.
+After a conversation with the lab support, we understood that
+there was nothing wrong with that and sometimes it was even better.
+
+We debated how we should mark the winning discs if there is more than
+one victory (for example, victory both diagonally and vertically)
+We were told in the forum that the choice was for our consideration,
+and therefore we marked only one of the cases of victory.
+
+In case of the game is finished, we set an automatic exit
+(with "sleep()") within 2 seconds. As a result, the exit
+button is disabled for this short time. After checking with the
+lab support, we realized that there is no problem with this
+
+We decided to set the GUI as a class in the file four_in_a_row
+Since we are not asked to define it as independent class, in
+contrast to the Game class
+=======================================================================
